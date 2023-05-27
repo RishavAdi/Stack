@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+void solve(stack<int>& s, int x) {
+  if (s.empty()) {
+      s.push(x);
+    return;
+  }
+    int topelement=s.top();
+    s.pop();
+    solve(s,x);
+    s.push(topelement);
+}
+stack<int> pushAtBottom(stack<int>& myStack, int x) 
+{
+    solve( myStack,x);
+    return myStack;
+}
