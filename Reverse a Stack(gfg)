@@ -1,0 +1,20 @@
+class Solution{
+public:
+void solve(stack<int>& s, int x) {
+  if (s.empty()) {
+      s.push(x);
+    return;
+  }
+    int topelement=s.top();
+    s.pop();
+    solve(s,x);
+    s.push(topelement);
+}
+    void Reverse(stack<int> &St){
+        if(St.empty())return;
+        int target=St.top();
+        St.pop();
+        Reverse(St);
+        solve(St,target);
+    }
+};
